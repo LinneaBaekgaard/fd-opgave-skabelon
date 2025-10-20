@@ -1,0 +1,99 @@
+<header class="header full-width">
+  <div class="header-content container">
+    <h1>AskExperts</h1>
+    <nav>
+      <a href="#0">Home</a>
+      <a href="#0">Case study</a>
+      <a href="#0">Team</a>
+      <a href="#0">About</a>
+    </nav>
+    <button popovertarget="popup">Login</button>
+
+    <div id="popup" popover="auto">
+      <h2>Dashboard Login</h2>
+      <input type="text" />
+      <button class="login-btn">Go to dashboard</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: var(--bg-header);
+    color: var(--white);
+
+    .header-content {
+      display: flex;
+      padding: 38px;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+
+      h1 {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 105%;
+      }
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+          color: var(--white);
+          text-decoration: none;
+          font-size: 1rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        padding: 4px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        background: var(--yellow);
+      }
+
+      ::backdrop {
+        background: var(--bg-backdrop);
+        backdrop-filter: blur(16px);
+      }
+
+      [popover] {
+        background-color: #181818;
+        color: #fff;
+        opacity: 0;
+        translate: 0 -100%;
+
+        transition: 0.6s;
+        transition-property: opacity, display, overlay, translate;
+        /* exit stage: */
+        transition-behavior: allow-discrete;
+
+        /* open stage: */
+        &:popover-open {
+          opacity: 1;
+          translate: 0 0;
+
+          /* entry stage: */
+          @starting-style {
+            opacity: 0;
+            translate: 0 100%;
+          }
+          input {
+            background-color: var(--white);
+          }
+        }
+      }
+    }
+  }
+</style>

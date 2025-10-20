@@ -1,0 +1,83 @@
+---
+import ArrowRight from "@icons/arrow--right.svg";
+import ArrowLeft from "@icons/arrow-left.svg";
+
+import ScrollingContainer from "./scrollingContainer.astro";
+
+const { cardContent } = Astro.props;
+---
+
+<section class="full-width">
+  <div class="header container">
+    <div class="text-container">
+      <h2>Financial projections</h2>
+      <p>Financial projections are essential for planning and monitoring a company’s performance. They provide insights into potential revenue, expenses, and profitability over specific periods.</p>
+    </div>
+
+    <div class="arrows">
+      <button class="arrow arrow-left" aria-label="Forrige"><ArrowLeft /></button>
+      <button class="arrow arrow-right" aria-label="Næste"><ArrowRight /></button>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <ScrollingContainer />
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--bg-card-light);
+    padding-block: clamp(3rem, 6vw, 5rem);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+
+      .text-container {
+        max-width: 56ch;
+      }
+
+      /* Pilene */
+      .arrows {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        button {
+          display: grid;
+          place-items: center;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          transition: opacity 0.2s ease;
+        }
+
+        .arrow-left {
+          background-color: var(--bg-black-hero);
+          color: var(--white);
+        }
+
+        .arrow-right {
+          background-color: var(--yellow);
+          color: var(--bg-black);
+        }
+
+        button:hover {
+          opacity: 0.85;
+        }
+      }
+
+      /* HER LÆGGES EN HOVER PÅ KORT! sort baggrund og hvid tekst */
+    }
+
+    .carousel {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

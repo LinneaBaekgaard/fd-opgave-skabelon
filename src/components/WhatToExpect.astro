@@ -1,0 +1,112 @@
+---
+// import { Image } from "astro:assets";
+// import indexAbout from "@assets/images/indexAboutPhoto.jpg";
+import Checkmark from "@icons/checkmark.svg";
+import HeroBgWrapper from "./helpers/HeroBgWrapper.astro";
+---
+
+<section class="container">
+  <div class="wrapper">
+    <!-- <Image src={indexAbout} alt="CEO" /> -->
+
+    <!-- <HeroBgWrapper imagePath="indexAboutPhoto.jpg" class="hero-bg">
+    <h1>Din overskrift</h1>
+  </HeroBgWrapper> -->
+
+    <figure>
+      <img src="/src/assets/images/aboutindex.jpg" alt="people at table" />
+    </figure>
+    <div>
+      <div>
+        <p class="undertitel">we'll work with you</p>
+        <h2>What To Expect</h2>
+        <p>Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <Checkmark class="check" width={40} height={40} />
+            <p>Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.</p>
+          </li>
+          <li>
+            <Checkmark class="check" width={40} height={40} />
+            <p>Identify opportunities to optimize processes and implement impactful solutions with measurable results.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+
+        > div > p:first-child {
+          text-transform: uppercase;
+          margin-bottom: var(--space-xs);
+        }
+      }
+
+      figure {
+        background-image: url("/src/assets/images/Pattern.png");
+        z-index: -2;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        margin-inline: auto;
+        display: grid;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 1rem;
+          left: 5rem;
+          background: var(--green);
+          width: 100px;
+          height: 100px;
+          z-index: -1;
+          border-radius: 20px;
+        }
+        img {
+          justify-self: end; /* højre */
+          align-self: end; /* nederst */
+          border-radius: 20px;
+          max-width: 100%;
+
+          inline-size: 80%;
+          border-radius: 20px;
+        }
+      }
+
+      h2 {
+        margin-bottom: var(--space-xs);
+        font-size: var(--step--1);
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        display: flex;
+        gap: var(--space-s);
+      }
+
+      .check {
+        color: var(--green);
+      }
+    }
+  }
+</style>
