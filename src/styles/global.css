@@ -3,6 +3,7 @@ html {
   --yellow: #ffcc4a;
   --green: #4eaf4e;
   --white: #fff;
+  --black: #181818;
 
   --bg-header: rgba(27, 27, 27, 0.91);
   --bg-black-main: #1b1b1be8;
@@ -51,6 +52,14 @@ html {
     font-weight: 700;
   }
 
+  h3 {
+    font-family: Cabin;
+    font-size: var(--step--4);
+    line-height: 1.45;
+    font-style: normal;
+    font-weight: 600;
+  }
+
   p {
     font-family: Lato;
      font-size: var(--step--5);
@@ -74,6 +83,21 @@ html {
     line-height: 147.5%;
     font-weight: 400;
     font-family: Lato;
+  }
+
+  .btn {
+    font-family: Lato;
+    font-size: var(--step--5);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.8rem;
+
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 2.62rem;
+    padding: 0.9375rem 2.125rem;
+    width: 10rem;
   }
 }
 

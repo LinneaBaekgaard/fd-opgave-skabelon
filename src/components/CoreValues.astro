@@ -1,0 +1,94 @@
+---
+import DynamicIcon from "@components/helpers/DynamicIcon.astro";
+import coreValues from "@data/coreValues.json";
+---
+
+<section class="full-width">
+  <article class="container">
+    <div class="text-content">
+      <p class="undertitel">GROWING WITH OUR CLIENTS</p>
+      <h2>Our core values & principles</h2>
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+    </div>
+
+    <div class="getintouch-btn">
+      <button class="btn">Get in touch</button>
+    </div>
+
+    <div class="core-values-data">
+      <ul class="cards">
+        {
+          coreValues.values.map((value) => (
+            <li class="card">
+              <DynamicIcon name={value.icon} />
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+              <a href={value.link.url}>{value.link.text} →</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </article>
+</section>
+
+<style>
+  section {
+    background-color: var(--bg-black-hero);
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+      margin-bottom: 2.12rem;
+      align-items: end;
+    }
+
+    .text-content {
+      margin: 0;
+      color: var(--white);
+      max-width: 56ch;
+    }
+    .getintouch-btn {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: end;
+
+      .btn {
+        background-color: var(--white);
+      }
+    }
+
+    .icon {
+      background-color: var(--black);
+      color: var(--white);
+      width: 3.3rem;
+      height: 3.3rem;
+      border-radius: 3.3rem;
+      padding: 0.65rem;
+    }
+
+    .core-values-data {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.25rem;
+      color: var(--black);
+      align-items: start;
+
+      .card {
+        background-color: var(--bg-card-light);
+        padding: 1rem;
+        border-radius: 1.25rem;
+      }
+      a {
+        color: var(--black);
+      }
+    }
+  }
+</style>
