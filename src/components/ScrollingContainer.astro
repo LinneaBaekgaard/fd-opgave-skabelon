@@ -61,4 +61,13 @@ const items = data.values.map((f) => ({
       border-radius: var(--card-border-radius);
     }
   }
+  @media (max-width: 768px) {
+    ul {
+      --card-width: 90%;
+      --card-padding: 2rem 1.5rem;
+      gap: 1.5rem;
+      padding-inline: 1rem;
+      scroll-padding-inline: 1rem;
+    }
+  }
 </style>

@@ -62,4 +62,19 @@ import CEOImage from "@assets/images/ceo.png";
       grid-template-columns: subgrid;
     }
   }
+  @media (max-width: 768px) {
+    section.hero > article {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 2rem 1rem;
+      grid-template-columns: unset;
+      grid-template-rows: unset;
+
+      img {
+        display: none;
+      }
+    }
+  }
 </style>

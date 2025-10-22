@@ -1,0 +1,76 @@
+---
+import EmployeeCards from "@components/EmployeeCards.astro";
+import Layout from "@layouts/Layout.astro";
+import UndersideHero from "@components/UndersideHero.astro";
+---
+
+<Layout>
+  <section class="full-width">
+    <UndersideHero />
+    <article class="container">
+      <h1>Meet Our Great Team</h1>
+      <div class="intro">
+        <p>
+          Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects
+          and create lasting impacts.
+        </p>
+        <button class="btn">Join our team</button>
+      </div>
+      <div class="cards-wrapper">
+        <EmployeeCards />
+      </div>
+    </article>
+  </section>
+</Layout>
+
+<style>
+  section {
+    padding: 0;
+
+    .container {
+      margin: 5rem;
+    }
+  }
+  article {
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      p {
+        flex: 1;
+        margin: 0;
+        max-width: 65ch;
+      }
+
+      .btn {
+        flex-shrink: 0;
+        width: 11rem;
+        text-align: center;
+        background-color: var(--black);
+        color: var(--white);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    section .container {
+      margin: 2rem; /* mindre margin på mobil */
+    }
+
+    article .intro {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    article .intro p {
+      max-width: 100%;
+    }
+
+    article .intro .btn {
+      width: 100%;
+    }
+  }
+</style>

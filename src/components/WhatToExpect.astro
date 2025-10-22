@@ -1,18 +1,10 @@
 ---
-// import { Image } from "astro:assets";
-// import indexAbout from "@assets/images/indexAboutPhoto.jpg";
 import Checkmark from "@icons/checkmark.svg";
 import HeroBgWrapper from "./helpers/HeroBgWrapper.astro";
 ---
 
 <section class="container">
   <div class="wrapper">
-    <!-- <Image src={indexAbout} alt="CEO" /> -->
-
-    <!-- <HeroBgWrapper imagePath="indexAboutPhoto.jpg" class="hero-bg">
-    <h1>Din overskrift</h1>
-  </HeroBgWrapper> -->
-
     <figure>
       <img src="/src/assets/images/aboutindex.jpg" alt="people at table" />
     </figure>
@@ -77,8 +69,8 @@ import HeroBgWrapper from "./helpers/HeroBgWrapper.astro";
           border-radius: 20px;
         }
         img {
-          justify-self: end; /* højre */
-          align-self: end; /* nederst */
+          justify-self: end;
+          align-self: end;
           border-radius: 20px;
           max-width: 100%;
 
@@ -107,6 +99,13 @@ import HeroBgWrapper from "./helpers/HeroBgWrapper.astro";
       .check {
         color: var(--green);
       }
+    }
+  }
+  @media (max-width: 768px) {
+    section .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 </style>

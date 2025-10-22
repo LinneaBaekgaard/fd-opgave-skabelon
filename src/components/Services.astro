@@ -66,4 +66,13 @@ console.log(servicesData);
       }
     }
   }
+  @media (max-width: 768px) {
+    ul.cards {
+      flex-direction: column; /* Stak kort lodret */
+      gap: 1.5rem;
+      padding: 0 1rem;
+      grid-row: unset; /* Fjern grid-row, så de kommer naturligt efter hero */
+      margin-top: 2rem; /* Ekstra afstand fra hero */
+    }
+  }
 </style>

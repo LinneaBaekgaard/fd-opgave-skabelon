@@ -2,17 +2,18 @@
   <div class="header-content container">
     <h1>AskExperts</h1>
     <nav>
-      <a href="#0">Home</a>
-      <a href="#0">Case study</a>
-      <a href="#0">Team</a>
-      <a href="#0">About</a>
+      <a href="/index">Home</a>
+      <a href="/case">Case study</a>
+      <a href="/team">Team</a>
+      <a href="/about">About</a>
     </nav>
     <button popovertarget="popup">Login</button>
 
     <div id="popup" popover="auto">
       <h2>Dashboard Login</h2>
-      <input type="text" />
-      <button class="login-btn">Go to dashboard</button>
+      <input name="email" type="email" placeholder="Your mail address" required />
+      <input name="password" type="password" placeholder="Password" required />
+      <button type="submit">Go to dashboard</button>
     </div>
   </div>
 </header>
@@ -21,6 +22,15 @@
   header {
     background-color: var(--bg-header);
     color: var(--white);
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+    }
 
     .header-content {
       display: flex;
@@ -63,34 +73,57 @@
         background: var(--yellow);
       }
 
-      ::backdrop {
-        background: var(--bg-backdrop);
+      #popup::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(16px);
       }
 
       [popover] {
-        background-color: #181818;
-        color: #fff;
         opacity: 0;
         translate: 0 -100%;
+        background-color: var(--black);
+        color: var(--white);
+
+        padding: 5rem 4.25rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 1.875rem;
+        gap: 1.875rem;
 
         transition: 0.6s;
         transition-property: opacity, display, overlay, translate;
-        /* exit stage: */
         transition-behavior: allow-discrete;
 
-        /* open stage: */
         &:popover-open {
+          display: flex;
+
           opacity: 1;
           translate: 0 0;
 
-          /* entry stage: */
           @starting-style {
             opacity: 0;
             translate: 0 100%;
           }
           input {
-            background-color: var(--white);
+            appearance: none;
+            border-radius: 0.25rem;
+            border: 1px solid #e3e3e3;
+            background: #fff;
+            color: #111;
+            padding: 1rem 3rem;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) inset;
+          }
+
+          button {
+            border: none;
+            border-radius: 999px;
+            background: var(--yellow);
+            color: var(--bg-black);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
           }
         }
       }

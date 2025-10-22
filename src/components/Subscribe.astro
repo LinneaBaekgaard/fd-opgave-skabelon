@@ -1,0 +1,102 @@
+<section class="full-width">
+  <article class="container">
+    <div>
+      <h3>Subscribe Our Newsletter</h3>
+      <p>Build stronger Customer Relationships with Consultalk</p>
+    </div>
+    <div>
+      <form>
+        <input type="email" id="email" name="email" placeholder="your email adress" />
+      </form>
+      <a href="#">Subscribe</a>
+    </div>
+  </article>
+</section>
+
+<style>
+  section {
+    article {
+      margin-top: var(--space-xl);
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 22px;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(/src/assets/images/Pattern.png);
+        background-size: 190%;
+        background-repeat: no-repeat;
+        top: 1rem;
+        z-index: 0;
+        width: 200px;
+        height: 200px;
+        top: -87px;
+        right: -74px;
+        rotate: 45deg;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10rem;
+        left: 63rem;
+        background: var(--green);
+        border-radius: 1.25rem;
+        width: 150px;
+        aspect-ratio: 1/1;
+        z-index: 1;
+        transform: translate(50%, 0) rotate(45deg);
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: var(--space-l);
+      }
+
+      div:first-child {
+        h3 {
+          font-size: var(--step--2);
+          font-weight: 600;
+        }
+      }
+
+      div:nth-child(2) {
+        display: flex;
+        gap: var(--space-s);
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: var(--space-l);
+        }
+        form {
+          display: flex;
+          align-items: center;
+
+          input {
+            background-color: white;
+            width: 100%;
+            padding: 0.9375rem 3.5rem;
+            border-radius: 6px;
+            border: none;
+            font-size: var(--step--4);
+          }
+        }
+
+        a {
+          align-self: center;
+          border-radius: 2.625rem;
+          background: #ffcc4a;
+          padding: 0.9375rem 2.8125rem;
+          text-decoration: none;
+          color: black;
+          position: relative;
+        }
+      }
+    }
+  }
+</style>
