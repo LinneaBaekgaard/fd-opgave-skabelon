@@ -1,0 +1,185 @@
+---
+import CoreValues from "@components/CoreValues.astro";
+import Layout from "../layouts/Layout.astro";
+import Checkmark from "@icons/checkmark.svg";
+import EmployeeCards from "@components/EmployeeCards.astro";
+import Faq from "@components/Faq.astro";
+---
+
+<Layout>
+  <section class="full-width">
+    <article>
+      <img src="/src/assets/images/abouthero.jpg" alt="image of team working together" />
+    </article>
+
+    <div class="container">
+      <div class="wrapper">
+        <div>
+          <p class="undertitel">OUR VISION</p>
+          <h2>Turn your ideas into reality.</h2>
+          <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+
+          <ul>
+            <li>
+              <Checkmark class="check" width={40} height={40} />
+              <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</p>
+            </li>
+            <li>
+              <Checkmark class="check" width={40} height={40} />
+              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</p>
+            </li>
+          </ul>
+        </div>
+
+        <figure>
+          <img src="/src/assets/images/aboutimg.jpg" alt="image of meeting at table" />
+        </figure>
+      </div>
+    </div>
+  </section>
+  <CoreValues background="var(--bg-card-light)" sectionTextColor="var(--black)" cardBackground="var(--white)" btnBackground="var(--black)" btnTextColor="var(--white)" />
+
+  <article class="container card-container">
+    <h1>Meet Our Great Team</h1>
+    <div class="intro">
+      <p>
+        Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects
+        and create lasting impacts.
+      </p>
+      <button class="btn">Join our team</button>
+    </div>
+    <div class="cards-wrapper">
+      <EmployeeCards />
+    </div>
+  </article>
+
+  <!-- 
+  <section class="faq-section">
+    <div class="faq-wrapper">
+      <Faq />
+    </div>
+  </section>
+  -->
+</Layout>
+
+<style>
+  section {
+    display: grid;
+    padding: 0;
+    margin: 0;
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .text-content {
+      color: var(--black);
+    }
+
+    article {
+      grid-column: full;
+      width: 100%;
+    }
+
+    img {
+      padding: 0;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .wrapper {
+      padding-block: clamp(3rem, 6vw, 5rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+
+        > div > p:first-child {
+          text-transform: uppercase;
+          margin-bottom: var(--space-xs);
+        }
+      }
+      figure {
+        align-items: start;
+        background-image: url("/src/assets/images/Pattern.png");
+        z-index: -2;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: right top;
+        margin-inline: auto;
+        display: grid;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 7rem;
+          right: -2rem;
+          background: var(--green);
+          width: 150px;
+          height: 130px;
+          z-index: -1;
+          border-radius: 20px;
+        }
+        img {
+          justify-self: end;
+          align-self: end;
+          border-radius: 20px;
+          max-width: 100%;
+
+          inline-size: 80%;
+          border-radius: 20px;
+        }
+      }
+
+      h2 {
+        margin-bottom: var(--space-xs);
+        font-size: var(--step--1);
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        display: flex;
+        gap: var(--space-s);
+      }
+
+      .check {
+        color: var(--green);
+      }
+    }
+  }
+  .faq-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    section .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem;
+
+      figure::after {
+        display: none;
+      }
+    }
+  }
+</style>

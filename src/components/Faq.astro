@@ -1,0 +1,49 @@
+---
+import data from "@data/faq.json";
+---
+
+<section class="ful-width">
+  <article class="container">
+    <div>
+      <p class="undertitel">FAQ</p>
+      <h2>Costumer Questions</h2>
+    </div>
+
+    <div>
+      {
+        data.faq.map((question) => (
+          <details name="accordion">
+            <summary>{question.question}</summary>
+            <div>
+              <p>{question.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </article>
+</section>
+
+<style>
+  details {
+    summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      curser: pointer;
+      font-weight: 500;
+
+      + div p {
+        margin-top: var(--space-m);
+      }
+    }
+
+    summary {
+      content: "+";
+      transition: transform 5s;
+    }
+  }
+  [open] summary::after {
+    content: "-";
+  }
+</style>
