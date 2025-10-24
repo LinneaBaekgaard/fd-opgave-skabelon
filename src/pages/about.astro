@@ -4,12 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import Checkmark from "@icons/checkmark.svg";
 import EmployeeCards from "@components/EmployeeCards.astro";
 import Faq from "@components/Faq.astro";
+import AboutHeroImage from "@assets/images/abouthero.jpg?url";
+import AboutImage from "@assets/images/aboutimg.jpg?url";
 ---
 
 <Layout>
   <section class="full-width">
     <article>
-      <img src="/abouthero.jpg" alt="image of team working together" />
+      <img src={AboutHeroImage} alt="image of team working together" />
     </article>
 
     <div class="container">
@@ -32,7 +34,7 @@ import Faq from "@components/Faq.astro";
         </div>
 
         <figure>
-          <img src="../assets/images/aboutimg.jpg" alt="image of meeting at table" />
+          <img src={AboutImage} alt="image of meeting at table" />
         </figure>
       </div>
     </div>

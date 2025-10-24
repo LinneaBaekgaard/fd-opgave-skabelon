@@ -1,6 +1,9 @@
 ---
 import DynamicIcon from "@components/helpers/DynamicIcon.astro";
 import DynamicImage from "@components/helpers/DynamicImage.astro";
+import ContactImage1 from "@assets/images/contactimg1.jpg?url";
+import ContactImage2 from "@assets/images/contactimg2.jpg?url";
+import ContactImage3 from "@assets/images/contactimg3.jpg?url";
 ---
 
 <section class="container">
@@ -81,9 +84,9 @@ import DynamicImage from "@components/helpers/DynamicImage.astro";
 
     <figure>
       <div class="images">
-        <img class="img1" src="/src/assets/images/contactimg1.jpg" alt="woman in chair" />
-        <img class="img2" src="/src/assets/images/contactimg2.jpg" alt=" a meeting" />
-        <img class="img3" src="/src/assets/images/contactimg3.jpg" alt="image of conversation" />
+        <img class="img1" src={ContactImage1} alt="" />
+        <img class="img2" src={ContactImage2} alt="" />
+        <img class="img3" src={ContactImage3} alt="" />
       </div>
     </figure>
   </article>
